@@ -130,11 +130,11 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="images\test_image.png" />
-    <Content Include="Pages\LoginTest.aspx" />
+    <Content Include="Pages\LoginTest1.aspx" />
     <Content Include="Pages\LoginTest2.aspx" />
     <Content Include="Pages\PostDetails.aspx" />
     <Content Include="Pages\Posts.aspx" />
-    <Content Include="Pages\Logint4.aspx" />
+    <Content Include="Pages\LoginTest3.aspx" />
     <Content Include="Pages\Login.aspx" />
     <Content Include="Pages\Signin.aspx" />
     <Content Include="Scripts\bootstrap.js" />
@@ -200,12 +200,12 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Model\PostModel.cs" />
-    <Compile Include="Pages\LoginTest.aspx.cs">
-      <DependentUpon>LoginTest.aspx</DependentUpon>
+    <Compile Include="Pages\LoginTest1.aspx.cs">
+      <DependentUpon>LoginTest1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\LoginTest.aspx.designer.cs">
-      <DependentUpon>LoginTest.aspx</DependentUpon>
+    <Compile Include="Pages\LoginTest1.aspx.designer.cs">
+      <DependentUpon>LoginTest1.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\LoginTest2.aspx.cs">
       <DependentUpon>LoginTest2.aspx</DependentUpon>
@@ -228,12 +228,12 @@
     <Compile Include="Pages\Posts.aspx.designer.cs">
       <DependentUpon>Posts.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Logint4.aspx.cs">
-      <DependentUpon>Logint4.aspx</DependentUpon>
+    <Compile Include="Pages\LoginTest3.aspx.cs">
+      <DependentUpon>LoginTest3.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Logint4.aspx.designer.cs">
-      <DependentUpon>Logint4.aspx</DependentUpon>
+    <Compile Include="Pages\LoginTest3.aspx.designer.cs">
+      <DependentUpon>LoginTest3.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
