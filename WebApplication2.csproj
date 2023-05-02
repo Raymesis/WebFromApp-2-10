@@ -130,6 +130,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="images\test_image.png" />
+    <Content Include="Pages\comingsoonTest.aspx" />
     <Content Include="Pages\LoginTest1.aspx" />
     <Content Include="Pages\LoginTest2.aspx" />
     <Content Include="Pages\PostDetails.aspx" />
@@ -200,6 +201,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Model\PostModel.cs" />
+    <Compile Include="Pages\comingsoonTest.aspx.cs">
+      <DependentUpon>comingsoonTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\comingsoonTest.aspx.designer.cs">
+      <DependentUpon>comingsoonTest.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\LoginTest1.aspx.cs">
       <DependentUpon>LoginTest1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
