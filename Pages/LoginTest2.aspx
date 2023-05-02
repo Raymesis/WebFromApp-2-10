@@ -1,24 +1,24 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="WebApplication2.Pages.WebForm3" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LoginTest2.aspx.cs" Inherits="WebApplication2.Pages.LoginTest2" %>
 
+<!DOCTYPE html>
 
-
-
-
-
-
-    <body>
-    
-        <div class="container1">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="container">
             <h1>خوش آمدید</h1>
             <p>اگر حساب کاربری دارید از فرم زیر استفاده کنید </p>
             <hr>
 
             <label for="email"><b>نام کاربری :</b></label>
-            <input type="text" placeholder="نام کاربری خود را وارد کنید " name="username" id="username" required>
+            <input type="text" placeholder="نام کاربری خود را وارد کنید :" name="username" id="username" required>
 
             <label for="psw"><b>رمز ورود :</b></label>
-            <input type="password" placeholder="رمز عبور خود را وارد کنید " name="password" id="password" required>
+            <input type="password" placeholder="رمز عبور خود را وارد کنید :" name="password" id="password" required>
 
             <%--<label for="psw-repeat"><b>Repeat Password</b></label>
             <input type="password" placeholder=" " name="psw-repeat" id="psw-repeat" required>--%>
@@ -29,10 +29,10 @@
             <button type="submit" class="registerbtn">ورود به حساب کاربری</button>
         </div>
 
-        <div class="container1 signin">
-            <p>حساب کاربری ندارید؟<a runat="server" href="~/Pages/Signin">ثبت نام</a>.</p>
+        <div class="container signin">
+            <p>حساب کاربری ندارید؟<a href="#">ثبت نام</a>.</p>
         </div>
-    
+    </form>
 
 
 
@@ -47,7 +47,7 @@
         }
 
 
-        .container1 {
+        .container {
             padding: 20px;
             background-color: white;
             direction:rtl;
@@ -103,10 +103,4 @@
 
     </style>
 </body>
-
-
-
-
-
-
-</asp:Content>
+</html>

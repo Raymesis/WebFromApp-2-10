@@ -30,3 +30,8 @@ textarea {
         padding: 0;
     }
 }
+
+.direction{
+
+    direction:rtl;
+}

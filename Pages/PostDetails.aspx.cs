@@ -20,6 +20,7 @@ namespace WebApplication2.Pages
             PostModel post = new PostDaoImp().getPosts()[id];
 
             return post;
+
         }
     }
 }

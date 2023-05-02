@@ -23,7 +23,7 @@ namespace WebApplication1.Repository
             SqlDataReader reader;
             String sql = "";
 
-            sql = "select * from Posts";
+            sql = "select * from Post";
 
             Db.Instance.cnn.Open();
 
@@ -40,13 +40,13 @@ namespace WebApplication1.Repository
                     reader.GetInt32(2),
                     reader.GetString(3),
                     reader.GetString(4),
-                    reader.GetInt32(6),
-                    reader.GetString(5),             
-                    reader.GetString(7),
-                    reader.GetString(8),
-                    reader.GetDateTime(9),
-                    reader.GetBoolean(10))
-                );
+                    reader.GetString(5),
+                    reader.GetInt32(6),             
+                    "",
+                    "",//reader.GetString(8),
+                    System.DateTime.Now,//reader.GetDateTime(9),
+                    true//reader.GetBoolean(10))
+                ));
 
             }
             Db.Instance.cnn.Close();

@@ -22,11 +22,11 @@ namespace WebApplication2.Model
         public PostModel(
             int id,
             int daste_id,
-            int user_id,       
+            int user_id,
+            string gheimat,
             string onvan,
             string tozihat,
             int vaziat_forosh,
-            string gheimat,
             string img,
             string shomare_tamas,
             DateTime tarikh_sabt,

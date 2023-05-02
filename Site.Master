@@ -5,14 +5,15 @@
 <html lang="en">
 <head runat="server">
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <title><%: Page.Title %> -سایت مثلا دیوار</title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
 
-    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
 </head>
@@ -20,7 +21,7 @@
     <form runat="server">
         <asp:ScriptManager runat="server">
             <Scripts>
-                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                
                 <%--Framework Scripts--%>
                 <asp:ScriptReference Name="MsAjaxBundle" />
                 <asp:ScriptReference Name="jquery" />
@@ -39,35 +40,99 @@
         </asp:ScriptManager>
 
         <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
+            <div class="container"">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/">Application name</a>
+                    <a class="navbar-brand" runat="server" href="~/">مثلا دیوار</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/About">About</a></li>
-                        <li><a runat="server" href="~/Contact">Contact</a></li>
-                        <li><a runat="server" href="~/Pages/login">ورود/ثبت نام</a></li>
+                        <li><a runat="server" href="~/">خانه</a></li>
+                        <li><a runat="server" href="~/About">درباره</a></li>
+                        <%--<li><a runat="server" href="~/Contact">Contact</a></li>--%>
+                        <li><a runat="server" href="~/Pages/loginT3">ورود/ثبت نام</a></li>
                         <li><a runat="server" href="~/Pages/Posts">آگهی ها</a></li>
                     </ul>
                 </div>
             </div>
         </div>
-        <div class="container body-content">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server">
-            </asp:ContentPlaceHolder>
-            <hr />
-            <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
-            </footer>
+
+        <div class="sidenav">
+            <a href="#about">املاک</a>
+            <a href="#services">لوازم دیجیتال</a>
+            <a href="#clients">وسایل نقلبه</a>
+            <a href="#contact">خانه و آشپزخانه</a>
+            <a href="#contact">خدمات</a>
+            <a href="#contact">وسایل شخصی</a>
+            <a href="#contact">سرگرمی و فراغت</a>
+            <a href="#contact">اجتماعی</a>
+            <a href="#contact">تجهیزات و صنعتی</a>
+            <a href="#contact">استخدام و کاریابی</a>
+
         </div>
 
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        </asp:ContentPlaceHolder>
+
+
     </form>
+
+
+
+    <style>
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 160px;
+            position:fixed;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            background-color: #C4C4C4;
+            overflow-x: hidden;
+            padding-top: 20px;
+            
+        }
+
+        .sidenav a {
+            padding: 6px 8px 6px 16px;
+            text-decoration: none;
+            font-size: 20px;
+            color: #818181;
+            display: block;
+        }
+
+        .sidenav a:hover {
+            /*color: #f1f1f1;*/
+            color: #000000;
+        }
+
+        /*.main {
+            margin-left: 160px; 
+            font-size: 28px;
+            padding: 0px 10px;
+        }*/
+
+        @media screen and (max-height: 450px) {
+
+        .sidenav {
+            padding-top: 15px;
+        }
+
+        .sidenav a {
+            font-size: 10px;
+        }
+        }
+
+    </style>
+
 </body>
 </html>

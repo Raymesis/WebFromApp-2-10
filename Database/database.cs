@@ -12,7 +12,7 @@ namespace WebApplication1.Database
         private Db()
         {
             string connetionString;
-            connetionString = @"Data Source=DESKTOP-2FCEFTS;Initial Catalog=DivarClone;Integrated Security=True";
+            connetionString = @"Data Source=DESKTOP-G760BD0;Initial Catalog=DivarClone_DB;Integrated Security=True";
             cnn = new SqlConnection(connetionString);
            
         }
