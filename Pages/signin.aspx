@@ -35,7 +35,7 @@
         </div>
 
         <div class="container1 signin">
-            <p>حساب کاربری دارید؟<a runat="server" href="~/Pages/LoginT3">ورود به حساب کاربری</a>.</p>
+            <p>حساب کاربری دارید؟<a runat="server" href="~/Pages/Login">ورود به حساب کاربری</a>.</p>
         </div>
     
 

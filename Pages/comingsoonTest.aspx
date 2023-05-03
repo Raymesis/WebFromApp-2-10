@@ -17,7 +17,7 @@
             <p>30 days left</p>
         </div>
         <div class="bottomleft">
-            <p></p>
+            <p>تست</p>
         </div>
     </div>
 
