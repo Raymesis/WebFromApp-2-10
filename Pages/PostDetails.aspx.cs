@@ -5,21 +5,31 @@ using System.Web;
 using System.Web.ModelBinding;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using WebApplication1.Repository;
+using WebApplication2.BusinessLogic;
 using WebApplication2.Model;
+
 namespace WebApplication2.Pages
 {
     public partial class PostDetails : Page
     {
+        Post post;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
-        public PostModel getPost([QueryString("id")] int id)
+        public Post GetPost([QueryString("postId")] int? postId)
         {
-            PostModel post = new PostDaoImp().getPosts()[id];
+            post = new PostsLogic().GetById(postId.Value);
+            return post;       
+        }
+        protected string CalculateTime(DateTime now)
+        {
+            return Utilities.Utils.CalculateTime(now);
+        }
 
-            return post;
+        public IEnumerable<WebApplication2.Model.PostAttributes> Repeater1_GetData()
+        {
+            return new PostAttributeLogic().GetByCategoryId(post.PostId);
         }
     }
 }

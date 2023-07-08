@@ -6,15 +6,16 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <title><%: Page.Title %> آگهی </title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
 
     <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link rel="stylesheet" runat="server" media="screen" href="~/Content/Custom.css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-
+    <link href="Content/main-179.5dc02bcb.desktop.css" rel="stylesheet" />
 </head>
 <body>
     <form runat="server">
@@ -22,9 +23,9 @@
             <Scripts>
                 <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
                 <%--Framework Scripts--%>
-                <asp:ScriptReference Name="MsAjaxBundle" />
-                <asp:ScriptReference Name="jquery" />
-                <asp:ScriptReference Name="bootstrap" />
+              <%--  <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />--%>
+<%--                <asp:ScriptReference Name="bootstrap" />
                 <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
                 <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
                 <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
@@ -33,12 +34,12 @@
                 <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
                 <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
                 <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
-                <asp:ScriptReference Name="WebFormsBundle" />
+                <asp:ScriptReference Name="WebFormsBundle" />--%>
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
 
-        <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar navbar-inverse navbar-fixed-top" style="direction:rtl">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -46,25 +47,60 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/">Application name</a>
+                    <a class="navbar-brand" runat="server" href="/">DivarClone </a>
+                    <asp:TextBox runat="server" class="searchbox" type="s" 
+                            id="search" name="search" placeholder="جست و جو"></asp:TextBox>
                 </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/About">About</a></li>
-                        <li><a runat="server" href="~/Contact">Contact</a></li>
-                        <li><a runat="server" href="~/Pages/login">ورود/ثبت نام</a></li>
-                        <li><a runat="server" href="~/Pages/Posts">آگهی ها</a></li>
+                <div class="navbar-collapse collapse" style="float:right">
+                    <ul class="nav navbar-nav">                          
+                        <%--<li><asp:TextBox runat="server" class="searchbox" type="s" 
+                            id="search" name="search" placeholder="جست و جو"></asp:TextBox></li>--%>
+                        <li><a runat="server" href="/Pages/Admin/Posts"
+                            id="Admin" visible="false" >مدیریت</a></li>
+
+                        <li><a runat="server" href="/Pages/LogedUserPages/UserPosts"
+                            id="UserPosts" visible="false" >آگهی های من</a></li>
+
+                        <li><a runat="server" href="/Pages/LogedUserPages/UserProfile"
+                            id="ProfileLink" visible="false" >ناحیه کاربری</a></li>
+
+                         <li><a runat="server" href="/Pages/LogedUserPages/NewPost"
+                            id="NewPost" visible="false" >ثبت آگهی</a></li>
+
+                        <li><a runat="server" href="/Pages/Authentication/Login"
+                            id="LoginLink" visible="true" >ورود</a></li>
+
+                        <li><a runat="server" href="/Pages/Authentication/Register"
+                            id="RegisterLink" visible="true" >ثبت نام</a></li>
+
+                         <li><a href="/" style="font-weight:bold; 
+                            font-size:x-large">آگهی ها</a></li>
+
                     </ul>
                 </div>
             </div>
         </div>
-        <div class="container body-content">
+
+        <div class="sidebar" style="width:10%">
+            <h3 class="bar-item">دسته ها</h3>
+            <asp:ListView ID="productList" runat="server" 
+                DataKeyNames="CategoryId" 
+                ItemType="WebApplication2.Model.Category" SelectMethod="GetCategories">
+                <ItemTemplate>
+
+                     <a href="/Default.aspx?cat=<%#Item.CategoryId %>" class="bar-item"><%#Item.CategoryName %></a>
+
+                </ItemTemplate>
+              </asp:ListView>
+             
+
+        </div>
+        <div class="container body-content" style="margin-right:10%">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
+                <%--<p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>--%>
             </footer>
         </div>
 

@@ -5,11 +5,18 @@ using System.Text;
 using System.Threading.Tasks;
 using WebApplication2.Model;
 
-namespace WebApplication1.Repository
+namespace WebApplication2.Repository
 {
     interface IPostDao
     {
-        List<PostModel> getPosts();
-        void addPost(PostModel post);
+        List<Post> GetPosts();
+        List<Post> GetPostsByActivationState(bool activeState);
+        List<Post> GetPostByUserId(string userId);
+        List<Post> GetPostByCategory(int selectedCategory);
+        Post GetPostById(int id);
+        List<Post> SearchPosts(string searchString);
+        int DeletePost(int id, string userId);
+        int InsertPost(Post post);
+        int EditPost(Post post, string userId);
     }
 }

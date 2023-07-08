@@ -1,0 +1,59 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="WebApplication2.Pages.Admin.Admin" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link rel="stylesheet" runat="server" media="screen" href="~/Content/Custom.css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="Content/main-179.5dc02bcb.desktop.css" rel="stylesheet" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="navbar navbar-inverse navbar-fixed-top" style="direction: rtl">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" runat="server" href="/">DivarClone </a>
+                    <asp:TextBox runat="server" class="searchbox" type="s"
+                        ID="search" name="search" placeholder="جست و جو"></asp:TextBox>
+                </div>
+                <div class="navbar-collapse collapse" style="float: right">
+                    <ul class="nav navbar-nav">
+                        <%--<li><asp:TextBox runat="server" class="searchbox" type="s" 
+                            id="search" name="search" placeholder="جست و جو"></asp:TextBox></li>--%>
+
+                        <li><a runat="server" href="/Pages/Admin/Posts?active=false"
+                            id="UserPosts" visible="true">آگهی های تایید نشده</a></li>
+
+                        <li><a runat="server" href="/Pages/Admin/Posts?active=true"
+                            id="A1" visible="true">آگهی های تایید شده</a></li>
+                        <li><a runat="server" href="/Pages/Admin/Categories"
+                            id="Categories" visible="true">دسته بندی ها</a></li>
+
+
+                        <li><a runat="server" href="/Pages/Admin/Users"
+                            id="NewPost" visible="true">تمام کاربران</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container body-content" style="margin-right: 10%">
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
